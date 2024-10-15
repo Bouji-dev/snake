@@ -2,7 +2,7 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<time.h>
-#include<Windows.h>
+#include<windows.h>
 using namespace std;
 
 int score;
@@ -29,9 +29,25 @@ void setup() {
 }
 
 void draw() {
+	system("cls");
+	int i, j;
+	for (i = 0; i < width; i++)
+		cout << "*";
+	cout << endl;
 
+	for (i = 0; i < height; i++) {
+		for (j = 0; j < width; j++) {
+			if (j == 0 || j == width - 1)
+				cout << "*";
+			else
+				cout << " ";
+		}
+		cout << endl;
+	}
+	
 
-
+	for (i = 0; i < width; i++)
+		cout << "*";
 }
 
 void input() {
@@ -56,8 +72,8 @@ int main() {
 		draw();
 		input();
 		logic();
-		sleep(50);
+		Sleep(200);
 	}
 
-
+	return 0;
 }
